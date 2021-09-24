@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Footer JS - Navbar</title>
+    <title>footer-js</title>
 
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -19,7 +19,7 @@
   <body>
     <header class="site-header">
       <a href="#home" class="logo">
-        <h1>Navbar</h1>
+        <h1><code>footer-js</code></h1>
       </a>
 
       <nav class="navbar">
@@ -37,29 +37,8 @@
     <div class="site-content">
       <div class="site-content-cover">
         <div class="container">
-          <textarea
-            id="text-input"
-            oninput="this.editor.update()"
-            rows="6"
-            cols="60"
-          >
-Type **Markdown** here.
-          </textarea>
-          <div id="preview"></div>
-          <script src="lib/markdown.js"></script>
-          <script>
-            function Editor(input, preview) {
-              this.update = function () {
-                preview.innerHTML = markdown.toHTML(input.value);
-              };
-              input.editor = this;
-              this.update();
-            }
-            var $ = function (id) {
-              return document.getElementById(id);
-            };
-            new Editor($("text-input"), $("preview"));
-          </script>
+          <h1><code>footer-js</code></h1>
+          <p>Welcome to <code>footer-js</code></p>
         </div>
       </div>
     </div>

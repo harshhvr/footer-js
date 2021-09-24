@@ -44,9 +44,9 @@ function setupFooter(object) {
 
   const d = new Date();
   const myFooter = {
-    target: object.target || "",
-    company: object.company || "[company]",
-    copyrightNote: object.copyrightNote || "[copyright_note]",
+    target: object.target || "footer",
+    company: object.company || "Company",
+    copyrightNote: object.copyrightNote || "All Rights Reserved.",
     copyrightStatus: object.copyrightStatus || false,
     yearEnded: object.yearEnded || d.getFullYear(),
     yearPosition: object.yearPosition || "end",
@@ -120,7 +120,7 @@ function setupFooter(object) {
   }
 
   if (!error_status) {
-    console.log("No errors is setup Footer!");
+    console.log("No errors is setupFooter() function.");
 
     const el = document.querySelector(myFooter.target);
     const d = new Date();
