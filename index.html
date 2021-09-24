@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer JS - Navbar</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/markdown.js/0.5.0/markdown.min.js"
+      integrity="sha512-kaDP6dcDG3+X87m9SnhyJzwBMKrYnd2tLJjGdBrZ9yEL8Zcl2iJRsPwylLkbd2g3QC5S8efV3sgwI5r73U0HnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/footer.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="#home" class="logo">
+        <h1>Navbar</h1>
+      </a>
+
+      <nav class="navbar">
+        <ul class="nav-items">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="site-content">
+      <div class="site-content-cover">
+        <div class="container">
+          <textarea
+            id="text-input"
+            oninput="this.editor.update()"
+            rows="6"
+            cols="60"
+          >
+Type **Markdown** here.
+          </textarea>
+          <div id="preview"></div>
+          <script src="lib/markdown.js"></script>
+          <script>
+            function Editor(input, preview) {
+              this.update = function () {
+                preview.innerHTML = markdown.toHTML(input.value);
+              };
+              input.editor = this;
+              this.update();
+            }
+            var $ = function (id) {
+              return document.getElementById(id);
+            };
+            new Editor($("text-input"), $("preview"));
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <h6>Copyright &copy; Company 2021. All Rights Reserved.</h6>
+    </footer>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+// style.scss
+
+/* style.css */
+
+// Roboto Font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
+
+// Root CSS
+:root {
+  --primary: black;
+  --secondary: #ff006a;
+
+  --black: #000;
+  --white: #fff;
+  --dark: #222;
+  --light: #ddd;
+  --gray: #888;
+  --dark-gray: #444;
+  --light-gray: #bbb;
+}
+
+// Basic CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+input,
+textarea,
+button {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body {
+  min-height: 100vh;
+}
+
+// Scrollbar CSS
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+::-webkit-scrollbar-corner {
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-gray);
+
+  &:active {
+    background-color: var(--dark);
+  }
+}
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+
+// Selection CSS
+::selection {
+  background-color: var(--black);
+  color: white;
+}
+
+// Main CSS
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  &.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    background-color: var(--dark);
+    color: var(--light-gray);
+
+    a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    > a {
+      &.logo {
+        > svg,
+        > img {
+          margin-right: 0.5rem;
+        }
+
+        > h1 {
+          font-size: 24px;
+        }
+      }
+    }
+
+    // .nav-items {
+    //   list-style: none;
+    // }
+
+    > nav {
+      &.navbar {
+        > ul {
+          &.nav-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+
+            > li {
+              &.nav-item {
+                > a {
+                  &.nav-link {
+                    padding: 0.3em 0.5em;
+                    font-size: 14px;
+                    text-transform: uppercase;
+
+                    &:active {
+                      color: var(--secondary);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  &.site-footer {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+
+    > h6 {
+      font-size: 14px;
+    }
+  }
+}
+
+div {
+  &.site-content {
+    position: relative;
+    overflow: auto;
+
+    > div.site-content-cover {
+      position: relative;
+      padding: 0.5rem;
+    }
+  }
+
+  &.container {
+    position: relative;
+    padding: 1rem;
+  }
+}
+
+textarea {
+  &#text-input {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 100vw;
+    user-select: none;
+  }
+}
